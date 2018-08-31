@@ -5,6 +5,13 @@ import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
 import template from '../views/rb-modal.html';
 
 export class RbModal extends RbBase() {
+	/* Lifecycle
+	 ************/
+	viewReady() {
+		super.viewReady && super.viewReady();
+		console.log('Hello RB-MODAL!');
+	}
+
 	/* Properties
 	 *************/
 	static get props() {
