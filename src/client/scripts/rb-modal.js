@@ -9,15 +9,23 @@ export class RbModal extends RbBase() {
 	 ************/
 	viewReady() {
 		super.viewReady && super.viewReady();
-		console.log('Hello RB-MODAL!');
 	}
 
 	/* Properties
 	 *************/
 	static get props() {
 		return {
-			kind: props.string
+			kind: props.string,
+			show: Object.assign({}, props.boolean, {
+				deserialize(val) {
+					return /^true$/i.test(val);
+				}
+			})
 		};
+	}
+
+	closeModal() {
+		this.show = !this.show;
 	}
 
 	/* Template

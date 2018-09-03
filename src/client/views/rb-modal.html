@@ -1,5 +1,27 @@
-<div class="modal">
-	rb-modal
+<div
+	class$="
+		modal
+		${props.kind || 'default'}
+		${props.show ? '' : 'hidden'}
+	">
+	<div class="container">
+		<header>
+			<h3>Modal Header</h3>
+			<rb-button
+				kind="text"
+				icon="times"
+				class="close"
+				icon-source="solid"
+				on-click="${this.closeModal.bind(this)}">
+			</rb-button>
+		</header>
+		<div class="body">
+			Modal Body
+		</div>
+		<footer>
+			Modal Footer
+		</footer>
+	</div>
 </div>
 
 <link rel="stylesheet" href="../styles/rb-modal.css">
