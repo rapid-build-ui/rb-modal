@@ -2,6 +2,7 @@
  * RB-MODAL
  ***********/
 import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
+import '../../rb-button/scripts/rb-button.js';
 import template from '../views/rb-modal.html';
 
 export class RbModal extends RbBase() {

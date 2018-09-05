@@ -1,5 +1,5 @@
 <div
-	class$="
+	class="
 		modal
 		${props.center ? 'center' : ''}
 		${props.kind || 'default'}
@@ -13,7 +13,7 @@
 				icon="times"
 				class="close"
 				icon-source="solid"
-				on-click="${this.closeModal.bind(this)}">
+				@click="${this.closeModal.bind(this)}">
 			</rb-button>
 		</header>
 		<div class="body">
