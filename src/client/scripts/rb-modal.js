@@ -9,6 +9,7 @@ export class RbModal extends RbBase() {
 	 ************/
 	viewReady() {
 		super.viewReady && super.viewReady();
+		this.rb.events.add(window, 'keydown', this.keyCloseModal);
 	}
 
 	/* Properties
@@ -27,6 +28,12 @@ export class RbModal extends RbBase() {
 
 	closeModal() {
 		this.show = false;
+	}
+
+	keyCloseModal(evt) {
+		if (!this.show) return;
+		if (evt.keyCode !== 27) return; // 27 is escape key
+		this.closeModal();
 	}
 
 	/* Template
