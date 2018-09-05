@@ -1,4 +1,4 @@
-/***********
+	/***********
  * RB-MODAL
  ***********/
 import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
