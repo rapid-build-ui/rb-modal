@@ -15,6 +15,7 @@ export class RbModal extends RbBase() {
 	 *************/
 	static get props() {
 		return {
+			center: props.boolean,
 			kind: props.string,
 			show: Object.assign({}, props.boolean, {
 				deserialize(val) {
