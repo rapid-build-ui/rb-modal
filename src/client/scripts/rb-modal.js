@@ -26,7 +26,7 @@ export class RbModal extends RbBase() {
 	}
 
 	closeModal() {
-		this.show = !this.show;
+		this.show = false;
 	}
 
 	/* Template
