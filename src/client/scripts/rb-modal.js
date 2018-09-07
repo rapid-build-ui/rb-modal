@@ -10,7 +10,11 @@ export class RbModal extends RbBase() {
 	 ************/
 	viewReady() {
 		super.viewReady && super.viewReady();
+		this.elms = {
+			container: this.shadowRoot.querySelector('.container')
+		}
 		this.rb.events.add(window, 'keydown', this.keyCloseModal);
+		this.rb.events.add(window, 'click', this.backdropCloseModal);
 	}
 
 	/* Properties
@@ -34,6 +38,13 @@ export class RbModal extends RbBase() {
 	keyCloseModal(evt) {
 		if (!this.show) return;
 		if (evt.keyCode !== 27) return; // 27 is escape key
+		this.closeModal();
+	}
+
+	backdropCloseModal(evt) {
+		if (!this.show) return;
+		const path = evt.composedPath();
+		if (path.includes(this.elms.container)) return;
 		this.closeModal();
 	}
 
