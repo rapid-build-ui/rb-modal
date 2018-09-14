@@ -27,11 +27,13 @@ export class RbModal extends RbBase() {
 				deserialize(val) {
 					return /^true$/i.test(val);
 				}
-			})
+			}),
+			unclosable: props.boolean
 		};
 	}
 
 	closeModal() {
+		if (this.unclosable) return;
 		this.show = false;
 	}
 
