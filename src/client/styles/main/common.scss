@@ -16,6 +16,13 @@
  	.hidden {
  		display: none;
  	}
+
+	&.unclosable {
+		rb-button {
+			display: none;
+		}
+	}
+
  	&.center {
  		align-items: center;
  	}

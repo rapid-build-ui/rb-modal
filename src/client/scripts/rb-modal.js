@@ -1,4 +1,4 @@
-	/***********
+/***********
  * RB-MODAL
  ***********/
 import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
@@ -10,7 +10,9 @@ export class RbModal extends RbBase() {
 	 ************/
 	viewReady() {
 		super.viewReady && super.viewReady();
+		this.rb.elms.container = this.shadowRoot.querySelector('.container');
 		this.rb.events.add(window, 'keydown', this.keyCloseModal);
+		this.rb.events.add(window, 'click touchstart', this.backdropCloseModal);
 	}
 
 	/* Properties
@@ -23,17 +25,26 @@ export class RbModal extends RbBase() {
 				deserialize(val) {
 					return /^true$/i.test(val);
 				}
-			})
+			}),
+			unclosable: props.boolean
 		};
 	}
 
 	closeModal() {
+		if (this.unclosable) return;
 		this.show = false;
 	}
 
 	keyCloseModal(evt) {
 		if (!this.show) return;
 		if (evt.keyCode !== 27) return; // 27 is escape key
+		this.closeModal();
+	}
+
+	backdropCloseModal(evt) {
+		if (!this.show) return;
+		const path = evt.composedPath();
+		if (path.includes(this.rb.elms.container)) return;
 		this.closeModal();
 	}
 
