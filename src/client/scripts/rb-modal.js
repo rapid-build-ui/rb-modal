@@ -10,9 +10,7 @@ export class RbModal extends RbBase() {
 	 ************/
 	viewReady() {
 		super.viewReady && super.viewReady();
-		this.elms = {
-			container: this.shadowRoot.querySelector('.container')
-		}
+		this.rb.elms.container = this.shadowRoot.querySelector('.container');
 		this.rb.events.add(window, 'keydown', this.keyCloseModal);
 		this.rb.events.add(window, 'click', this.backdropCloseModal);
 	}
@@ -46,7 +44,7 @@ export class RbModal extends RbBase() {
 	backdropCloseModal(evt) {
 		if (!this.show) return;
 		const path = evt.composedPath();
-		if (path.includes(this.elms.container)) return;
+		if (path.includes(this.rb.elms.container)) return;
 		this.closeModal();
 	}
 
