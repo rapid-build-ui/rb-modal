@@ -1,4 +1,4 @@
-	/***********
+/***********
  * RB-MODAL
  ***********/
 import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
@@ -12,7 +12,7 @@ export class RbModal extends RbBase() {
 		super.viewReady && super.viewReady();
 		this.rb.elms.container = this.shadowRoot.querySelector('.container');
 		this.rb.events.add(window, 'keydown', this.keyCloseModal);
-		this.rb.events.add(window, 'click', this.backdropCloseModal);
+		this.rb.events.add(window, 'click touchstart', this.backdropCloseModal);
 	}
 
 	/* Properties
