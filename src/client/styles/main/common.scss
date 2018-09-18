@@ -28,6 +28,7 @@
  	}
 
  	.container {
+		position: relative;
  		max-width: 500px;
  		margin: 1.75rem auto;
  		background-color: white;
@@ -50,6 +51,12 @@
  		> * {
  			padding: 16px;
  		}
+		.close {
+			position:absolute;
+			right: 16px;
+			top: 16px;
+			padding: 0;
+		}
 
  		/* Content Containers (Conditional Borders)
  		 *********************/
@@ -62,16 +69,10 @@
  		/* Header Content
  		 *****************/
  		> header {
- 			position: relative;
  			h3 {
  				margin: 0;
  				font-size: remy(20);
  				border-bottom: none;
- 			}
- 			.close {
- 				position:absolute;
- 				right: 16px;
- 				top: 16px;
  			}
  		}
 
