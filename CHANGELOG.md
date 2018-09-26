@@ -1,3 +1,17 @@
+## [0.0.3](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.2...v0.0.3) (2018-09-26)
+
+
+### Features
+
+* **header and footer:** make editable ([0d7034f](https://github.com/rapid-build-ui/rb-modal/commit/0d7034f))
+
+
+### Dependencies
+
+* **bump:** deps rb-base v0.0.4 and rb-button v0.0.11 ([138cc6a](https://github.com/rapid-build-ui/rb-modal/commit/138cc6a))
+
+
+
 ## [0.0.2](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.1...v0.0.2) (2018-09-14)
 
 
@@ -12,7 +26,7 @@
 * **new option:** add unclosable api option ([889c362](https://github.com/rapid-build-ui/rb-modal/commit/889c362))
 
 
-### Dependency Updates
+### Dependencies
 
 * **bump deps:** ([95e1270](https://github.com/rapid-build-ui/rb-modal/commit/95e1270))
 	* **rb-base** to v0.0.3
@@ -31,7 +45,7 @@
 * **close modal:** on keydown escape ([a7cb96d](https://github.com/rapid-build-ui/rb-modal/commit/a7cb96d))
 
 
-### Dependency Updates
+### Dependencies
 
 * **rb-base:** bump to v0.0.2 ([ff828a2](https://github.com/rapid-build-ui/rb-modal/commit/ff828a2))
 
