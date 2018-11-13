@@ -1,3 +1,17 @@
+## [0.0.4](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.3...v0.0.4) (2018-11-13)
+
+
+### Features
+
+* **responsive:** add left and right bumpers when screen is less then 560px ([f22e32b](https://github.com/rapid-build-ui/rb-modal/commit/f22e32b))
+
+
+### Dependencies
+
+* **bump:** deps rb-base v0.0.5 and rb-button v0.0.12 ([be04142](https://github.com/rapid-build-ui/rb-modal/commit/be04142))
+
+
+
 ## [0.0.3](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.2...v0.0.3) (2018-09-26)
 
 
