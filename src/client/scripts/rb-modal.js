@@ -30,6 +30,17 @@ export class RbModal extends RbBase() {
 		};
 	}
 
+	/* Observer
+	 ***********/
+	updating(prevProps, prevState) { // :void
+		if (prevProps.show === this.show) return;
+		this.rb.events.emit(this, 'show-changed', {
+			detail: { show: this.show }
+		});
+	}
+
+	/* Event Handlers
+	 *****************/
 	closeModal() {
 		if (this.unclosable) return;
 		this.show = false;
