@@ -32,6 +32,7 @@ export class RbModal extends RbBase() {
 		return {
 			center: props.boolean,
 			kind: props.string,
+			noBackdrop: props.boolean,
 			unclosable: props.boolean,
 			show: Object.assign({}, props.boolean, {
 				deserialize(val) {
