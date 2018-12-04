@@ -51,7 +51,11 @@
 		// margin to collapse bottom margin on last slot elm
 		header, footer, .body { padding: 16px 16px 0; }
 		header, footer { margin-bottom: 16px; }
-		.body { margin-bottom: 18px; }
+		.body {
+			margin-bottom: 18px;
+			max-height: calc(100vh - 210px);
+			overflow-y: auto;
+		}
  	}
 
 	/* Options
