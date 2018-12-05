@@ -12,21 +12,14 @@
  	align-items: flex-start;
  	background-color: rgba(0, 0, 0, 0.5);
 
- 	&.hidden,
- 	.hidden {
+	/* Helpers
+	 **********/
+ 	&.hidden {
  		display: none;
  	}
 
-	&.unclosable {
-		rb-button {
-			display: none;
-		}
-	}
-
- 	&.center {
- 		align-items: center;
- 	}
-
+	/* Modal
+	 ********/
  	.container {
 		position: relative;
  		max-width: 500px;
@@ -36,50 +29,49 @@
  		border-radius: .3rem;
  		flex-grow: 1;
 
- 		/* First Clear Inherited Styles
- 		 *******************************/
- 		> * {
- 			margin: 0;
- 			border: none;
- 			background-color: transparent;
- 			justify-content: flex-start;
- 			border: none;
- 		}
-
- 		/* Content Containers: Common
- 		 *****************************/
- 		> * {
- 			padding: 16px;
- 		}
-		.close {
-			position:absolute;
-			right: 16px;
-			top: 16px;
+ 		/* Close Button
+ 		 ***************/
+		.close { // coords set to not overlap content
+			position: absolute;
+			top: 5px;
+			right: 13px;
 			padding: 0;
+			transition: all .2s linear;
+			&:hover {
+				filter: brightness(.3);
+			}
 		}
 
- 		/* Content Containers (Conditional Borders)
+ 		/* Slots (Conditional Borders)
  		 *********************/
- 		> header + .body,
- 		> header + footer,
- 		> .body  + footer {
+ 		header:not([hidden]) ~ *,
+ 		.body:not([hidden])  ~ * {
  			border-top: 1px solid #e9ecef;
  		}
-
- 		/* Header Content
- 		 *****************/
- 		> header {
- 			h3 {
- 				margin: 0;
- 				font-size: remy(20);
- 				border-bottom: none;
- 			}
- 		}
-
- 		/* Header Content
- 		 *****************/
- 		> footer {
- 			min-height: 0;
- 		}
+		// margin to collapse bottom margin on last slot elm
+		header, footer, .body { padding: 16px 16px 0; }
+		header, footer { margin-bottom: 16px; }
+		.body {
+			margin-bottom: 18px;
+			max-height: calc(100vh - 210px);
+			overflow-y: auto;
+		}
  	}
+
+	/* Options
+	 **********/
+	&.unclosable {
+		rb-button {
+			display: none;
+		}
+	}
+ 	&.center {
+ 		align-items: center;
+ 	}
+	&.no-backdrop {
+		background-color: transparent;
+		.container {
+			box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+		}
+	}
  }

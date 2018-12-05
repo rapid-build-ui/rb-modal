@@ -4,6 +4,7 @@
 		${props.center ? 'center' : ''}
 		${props.kind || 'default'}
 		${props.show ? '' : 'hidden'}
+		${props.noBackdrop ? 'no-backdrop' : ''}
 		${props.unclosable ? 'unclosable' : ''}
 	">
 	<div class="container">
@@ -14,14 +15,14 @@
 			icon-source="solid"
 			@click="${this.closeModal.bind(this)}">
 		</rb-button>
-		<header>
-			<slot name="header"></slot>
+		<header ?hidden="${!state.slots.header}">
+			<slot name="header" @slotchange="${this._setSlotState.bind(this)}"></slot>
 		</header>
-		<div class="body">
-			<slot></slot>
+		<div class="body" ?hidden="${!state.slots.body}">
+			<slot @slotchange="${this._setSlotState.bind(this)}"></slot>
 		</div>
-		<footer>
-			<slot name="footer"></slot>
+		<footer ?hidden="${!state.slots.footer}">
+			<slot name="footer" @slotchange="${this._setSlotState.bind(this)}"></slot>
 		</footer>
 	</div>
 </div>
