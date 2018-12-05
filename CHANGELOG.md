@@ -1,3 +1,26 @@
+## [0.0.5](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.4...v0.0.5) (2018-12-05)
+
+
+### Features
+
+* **event:** emit event show-changed when show changes ([e048d2c](https://github.com/rapid-build-ui/rb-modal/commit/e048d2c))
+* **hidden attribute:** display style that respects the hidden attribute ([abe60af](https://github.com/rapid-build-ui/rb-modal/commit/abe60af))
+* **new api option:** no-backdrop ([a7e6be9](https://github.com/rapid-build-ui/rb-modal/commit/a7e6be9))
+* **scrolling:** scroll body when modal is taller than viewport ([4ce51d6](https://github.com/rapid-build-ui/rb-modal/commit/4ce51d6))
+* **slots:** only display slots if they are provided ([e95cf82](https://github.com/rapid-build-ui/rb-modal/commit/e95cf82))
+
+
+### Performance Improvements
+
+* **css:** improve browser performance by adding css contain property ([131af98](https://github.com/rapid-build-ui/rb-modal/commit/131af98))
+
+
+### Dependencies
+
+* **bump:** deps rb-base v0.0.6 and rb-button v0.0.13 ([8827a7b](https://github.com/rapid-build-ui/rb-modal/commit/8827a7b))
+
+
+
 ## [0.0.4](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.3...v0.0.4) (2018-11-13)
 
 
