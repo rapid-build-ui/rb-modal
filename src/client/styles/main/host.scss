@@ -2,7 +2,10 @@
  * HOST
  *******/
 :host {
-	contain: content;
+	// layout messes up the display
+	// paint causes modal not to appear
+	contain: style;
+	display: block;
 }
 :host([hidden]) {
 	display: none;
