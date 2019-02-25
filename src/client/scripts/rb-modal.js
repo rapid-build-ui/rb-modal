@@ -1,9 +1,9 @@
 /***********
  * RB-MODAL
  ***********/
-import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
+import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import template                from '../views/rb-modal.html';
 import '../../rb-button/scripts/rb-button.js';
-import template from '../views/rb-modal.html';
 
 export class RbModal extends RbBase() {
 	/* Lifecycle
