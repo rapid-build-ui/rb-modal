@@ -1,6 +1,6 @@
 {
   "name": "@rapid-build-ui/rb-modal",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "scripts/rb-modal.js",
   "description": "Rapid Build UI Web Component: rb-modal",
   "license": "MIT",
