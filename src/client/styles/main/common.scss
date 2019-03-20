@@ -33,13 +33,9 @@
  		 ***************/
 		.close { // coords set to not overlap content
 			position: absolute;
-			top: 5px;
-			right: 13px;
+			top: 2px;
+			right: 8px;
 			padding: 0;
-			transition: all .2s linear;
-			&:hover {
-				filter: brightness(.3);
-			}
 		}
 
  		/* Slots (Conditional Borders)
