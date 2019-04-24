@@ -13,8 +13,7 @@
 			class="close"
 			kind="neutral"
 			icon-kind="times"
-			icon-source="solid"
-			@click="${this.closeModal.bind(this)}">
+			icon-source="solid">
 		</rb-button>
 		<header ?hidden="${!state.slots.header}">
 			<slot name="header" @slotchange="${this._setSlotState.bind(this)}"></slot>

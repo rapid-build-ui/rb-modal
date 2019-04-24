@@ -22,7 +22,8 @@ export class RbModal extends RbBase() {
 	viewReady() {
 		super.viewReady && super.viewReady();
 		Object.assign(this.rb.elms, {
-			content: this.shadowRoot.querySelector('.content')
+			content: this.shadowRoot.querySelector('.content'),
+			closeBtn: this.shadowRoot.querySelector('rb-button')
 		});
 		this._attachEvents();
 	}
@@ -53,6 +54,7 @@ export class RbModal extends RbBase() {
 	/* Event Management
 	 *******************/
 	_attachEvents() { // :void
+		this.rb.elms.closeBtn.onclick = this.closeModal.bind(this);
 		this.rb.events.add(window, 'keydown', this.keyCloseModal);
 		this.rb.events.add(window, 'click touchstart', this.backdropCloseModal, {
 			capture: true // so event fires first
