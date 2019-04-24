@@ -2,6 +2,7 @@
  * RB-MODAL
  ***********/
 import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import Converter               from '../../rb-base/scripts/public/props/converters.js';
 import template                from '../views/rb-modal.html';
 import '../../rb-button/scripts/rb-button.js';
 
@@ -21,7 +22,7 @@ export class RbModal extends RbBase() {
 	viewReady() {
 		super.viewReady && super.viewReady();
 		Object.assign(this.rb.elms, {
-			container: this.shadowRoot.querySelector('.container')
+			content: this.shadowRoot.querySelector('.content')
 		});
 		this._attachEvents();
 	}
@@ -101,7 +102,7 @@ export class RbModal extends RbBase() {
 		if (!this.show) return;
 		const path = evt.composedPath();
 		if (!path.includes(this)) return; // elm under modal clicked via enter key
-		if (path.includes(this.rb.elms.container)) return;
+		if (path.includes(this.rb.elms.content)) return;
 		this.closeModal();
 	}
 
