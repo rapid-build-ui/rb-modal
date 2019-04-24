@@ -35,10 +35,8 @@ export class RbModal extends RbBase() {
 			kind: props.string,
 			noBackdrop: props.boolean,
 			unclosable: props.boolean,
-			show: Object.assign({}, props.boolean, {
-				deserialize(val) {
-					return /^true$/i.test(val);
-				}
+			open: Object.assign({}, props.boolean, {
+				deserialize: Converter.boolean
 			})
 		};
 	}
@@ -46,9 +44,9 @@ export class RbModal extends RbBase() {
 	/* Observer
 	 ***********/
 	updating(prevProps, prevState) { // :void
-		if (prevProps.show === this.show) return;
-		this.rb.events.emit(this, 'show-changed', {
-			detail: { show: this.show }
+		if (prevProps.open === this.open) return;
+		this.rb.events.emit(this, 'open-changed', {
+			detail: { open: this.open }
 		});
 	}
 
@@ -91,15 +89,15 @@ export class RbModal extends RbBase() {
 	 *****************/
 	closeModal() {
 		if (this.unclosable) return;
-		this.show = false;
+		this.open = false;
 	}
 	keyCloseModal(evt) {
-		if (!this.show) return;
+		if (!this.open) return;
 		if (evt.keyCode !== 27) return; // 27 is escape key
 		this.closeModal();
 	}
 	backdropCloseModal(evt) {
-		if (!this.show) return;
+		if (!this.open) return;
 		const path = evt.composedPath();
 		if (!path.includes(this)) return; // elm under modal clicked via enter key
 		if (path.includes(this.rb.elms.content)) return;
