@@ -2,13 +2,13 @@
  * OPTIONS
  **********/
 .modal {
-	&.unclosable {
+	&.center {
+		align-items: center;
+	}
+	&:not(.closable) {
 		rb-button {
 			display: none;
 		}
-	}
-	&.center {
-		align-items: center;
 	}
 	&:not(.backdrop) {
 		background-color: transparent;

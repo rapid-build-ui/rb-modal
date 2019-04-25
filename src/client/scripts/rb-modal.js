@@ -34,8 +34,11 @@ export class RbModal extends RbBase() {
 		return {
 			center: props.boolean,
 			kind: props.string,
-			unclosable: props.boolean,
 			backdrop: Object.assign({}, props.boolean, {
+				default: true,
+				deserialize: Converter.boolean
+			}),
+			closable: Object.assign({}, props.boolean, {
 				default: true,
 				deserialize: Converter.boolean
 			}),
@@ -93,7 +96,7 @@ export class RbModal extends RbBase() {
 	/* Event Handlers
 	 *****************/
 	closeModal() {
-		if (this.unclosable) return;
+		if (!this.closable) return;
 		this.open = false;
 	}
 	keyCloseModal(evt) {
