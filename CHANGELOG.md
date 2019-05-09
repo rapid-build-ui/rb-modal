@@ -1,3 +1,41 @@
+## [0.0.8](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.7...v0.0.8) (2019-05-09)
+
+
+### Dependencies
+
+* **bump:** deps rb-base v0.0.9 and rb-button v0.0.16 ([ceea87b](https://github.com/rapid-build-ui/rb-modal/commit/ceea87b))
+
+
+### BREAKING CHANGES
+
+To migrate the code follow the examples below:
+
+1. **api backdrop option:** change no-backdrop to backdrop ([072f4e8](https://github.com/rapid-build-ui/rb-modal/commit/072f4e8))
+
+	**Before:**  
+	no-backdrop
+
+	**Now:**  
+	backdrop=false
+
+2. **api closable option:** change unclosable to closable ([aa96629](https://github.com/rapid-build-ui/rb-modal/commit/aa96629))
+
+	**Before:**  
+	unclosable
+
+	**Now:**  
+	closable=false
+
+3. **api open option:** change show to open to be consistent with other components ([8fedbed](https://github.com/rapid-build-ui/rb-modal/commit/8fedbed))
+
+	**Before:**  
+	show=true
+
+	**Now:**  
+	open=true
+
+
+
 ## [0.0.7](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.6...v0.0.7) (2019-03-05)
 
 
