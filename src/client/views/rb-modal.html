@@ -3,17 +3,17 @@
 		modal
 		${props.center ? 'center' : ''}
 		${props.kind || 'default'}
-		${props.show ? '' : 'hidden'}
-		${props.noBackdrop ? 'no-backdrop' : ''}
-		${props.unclosable ? 'unclosable' : ''}
+		${props.open ? '' : 'hidden'}
+		${props.backdrop ? 'backdrop' : ''}
+		${props.closable ? 'closable' : ''}
 	">
-	<div class="container">
+	<div class="content">
 		<rb-button
-			kind="text"
+			text
 			class="close"
+			kind="neutral"
 			icon-kind="times"
-			icon-source="solid"
-			@click="${this.closeModal.bind(this)}">
+			icon-source="solid">
 		</rb-button>
 		<header ?hidden="${!state.slots.header}">
 			<slot name="header" @slotchange="${this._setSlotState.bind(this)}"></slot>

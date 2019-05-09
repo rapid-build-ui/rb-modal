@@ -2,11 +2,11 @@
  * RB-MODAL STYLES
  ******************/
 @import 'sass/functions.scss';
-@import 'main/host.scss';
 
-/* The Component
- ****************/
-.modal {
-	@import 'main/common.scss';
-	@import 'main/responsive.scss';
-}
+/* Layout
+ *********/
+@import 'layout/host.scss';
+@import 'layout/modal.scss';
+@import 'layout/content.scss';
+@import 'layout/options.scss';
+@import 'layout/responsive.scss';

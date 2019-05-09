@@ -2,6 +2,7 @@
  * RB-MODAL
  ***********/
 import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import Converter               from '../../rb-base/scripts/public/props/converters.js';
 import template                from '../views/rb-modal.html';
 import '../../rb-button/scripts/rb-button.js';
 
@@ -21,7 +22,8 @@ export class RbModal extends RbBase() {
 	viewReady() {
 		super.viewReady && super.viewReady();
 		Object.assign(this.rb.elms, {
-			container: this.shadowRoot.querySelector('.container')
+			content: this.shadowRoot.querySelector('.content'),
+			closeBtn: this.shadowRoot.querySelector('rb-button')
 		});
 		this._attachEvents();
 	}
@@ -32,12 +34,16 @@ export class RbModal extends RbBase() {
 		return {
 			center: props.boolean,
 			kind: props.string,
-			noBackdrop: props.boolean,
-			unclosable: props.boolean,
-			show: Object.assign({}, props.boolean, {
-				deserialize(val) {
-					return /^true$/i.test(val);
-				}
+			backdrop: Object.assign({}, props.boolean, {
+				default: true,
+				deserialize: Converter.boolean
+			}),
+			closable: Object.assign({}, props.boolean, {
+				default: true,
+				deserialize: Converter.boolean
+			}),
+			open: Object.assign({}, props.boolean, {
+				deserialize: Converter.boolean
 			})
 		};
 	}
@@ -45,15 +51,16 @@ export class RbModal extends RbBase() {
 	/* Observer
 	 ***********/
 	updating(prevProps, prevState) { // :void
-		if (prevProps.show === this.show) return;
-		this.rb.events.emit(this, 'show-changed', {
-			detail: { show: this.show }
+		if (prevProps.open === this.open) return;
+		this.rb.events.emit(this, 'open-changed', {
+			detail: { open: this.open }
 		});
 	}
 
 	/* Event Management
 	 *******************/
 	_attachEvents() { // :void
+		this.rb.elms.closeBtn.onclick = this.closeModal.bind(this);
 		this.rb.events.add(window, 'keydown', this.keyCloseModal);
 		this.rb.events.add(window, 'click touchstart', this.backdropCloseModal, {
 			capture: true // so event fires first
@@ -89,19 +96,19 @@ export class RbModal extends RbBase() {
 	/* Event Handlers
 	 *****************/
 	closeModal() {
-		if (this.unclosable) return;
-		this.show = false;
+		if (!this.closable) return;
+		this.open = false;
 	}
 	keyCloseModal(evt) {
-		if (!this.show) return;
+		if (!this.open) return;
 		if (evt.keyCode !== 27) return; // 27 is escape key
 		this.closeModal();
 	}
 	backdropCloseModal(evt) {
-		if (!this.show) return;
+		if (!this.open) return;
 		const path = evt.composedPath();
 		if (!path.includes(this)) return; // elm under modal clicked via enter key
-		if (path.includes(this.rb.elms.container)) return;
+		if (path.includes(this.rb.elms.content)) return;
 		this.closeModal();
 	}
 

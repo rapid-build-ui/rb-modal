@@ -1,0 +1,36 @@
+/***************
+ * CONTENT AREA
+ ***************/
+ .content {
+	position: relative; // to .modal
+	max-width: 500px;
+	margin: 1.75rem auto;
+	background-color: white;
+	border: 1px solid #00000033;
+	border-radius: .3rem;
+	flex-grow: 1;
+
+	/* Close Button
+	 ***************/
+	.close { // coords set to not overlap content
+		position: absolute;
+		top: 2px;
+		right: 8px;
+		padding: 0;
+	}
+
+	/* Slots (Conditional Borders)
+	 *********************/
+	header:not([hidden]) ~ *,
+	.body:not([hidden])  ~ * {
+		border-top: 1px solid #e9ecef;
+	}
+	// margin to collapse bottom margin on last slot elm
+	header, footer, .body { padding: 16px 16px 0; }
+	header, footer { margin-bottom: 16px; }
+	.body {
+		margin-bottom: 18px;
+		max-height: calc(100vh - 210px);
+		overflow-y: auto;
+	}
+}
