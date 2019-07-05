@@ -11,7 +11,7 @@ export class RbModal extends RbBase() {
 	 ************/
 	constructor() {
 		super();
-		this.version = '0.0.8';
+		this.version = '0.0.9';
 		this.state = {
 			slots: {
 				header: false,

@@ -1,3 +1,17 @@
+## [0.0.9](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.8...v0.0.9) (2019-07-05)
+
+
+### Features
+
+* **version:** add to component properties accessible via this.version ([50c6350](https://github.com/rapid-build-ui/rb-modal/commit/50c6350))
+
+
+### Dependencies
+
+* **bump:** deps rb-base v0.0.10 and rb-button v0.0.17 ([1c52479](https://github.com/rapid-build-ui/rb-modal/commit/1c52479))
+
+
+
 ## [0.0.8](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.7...v0.0.8) (2019-05-09)
 
 
