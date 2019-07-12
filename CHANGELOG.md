@@ -1,3 +1,12 @@
+## [0.0.10](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.9...v0.0.10) (2019-07-12)
+
+
+### Dependencies
+
+* **bump:** dep base v0.0.11
+
+
+
 ## [0.0.9](https://github.com/rapid-build-ui/rb-modal/compare/v0.0.8...v0.0.9) (2019-07-05)
 
 
