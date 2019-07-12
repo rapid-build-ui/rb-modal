@@ -1,8 +1,8 @@
 /***********
  * RB-MODAL
  ***********/
-import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
-import Converter               from '../../rb-base/scripts/public/props/converters.js';
+import { RbBase, props, html } from '../../base/scripts/base.js';
+import Converter               from '../../base/scripts/public/props/converters.js';
 import template                from '../views/rb-modal.html';
 import '../../rb-button/scripts/rb-button.js';
 
